@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEZA Ring - Premium Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.9) 70%);
+        }
+
+        .ring-background {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 175vmin;
+            height: 175vmin;
+            background-image: url('https://s3.twcstorage.ru/10049532-jeza-ring/ring.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            opacity: 0.9;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            margin-top: calc(8vh + 140px);
+        }
+
+        .logo {
+            margin-bottom: 2rem;
+        }
+
+        .logo-image {
+            width: clamp(150px, 25vw, 250px);
+            height: auto;
+        }
+
+        .tagline {
+            font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: clamp(1rem, 4vw, 2rem);
+            margin-bottom: 2rem;
+        }
+
+        .countdown-item {
+            text-align: center;
+            min-width: clamp(70px, 15vw, 100px);
+            position: relative;
+        }
+
+        .countdown-number {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .countdown-number::before,
+        .countdown-number::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .countdown-number::before {
+            top: 0;
+        }
+
+        .countdown-number::after {
+            bottom: 0;
+        }
+
+        .countdown-label {
+            font-size: clamp(0.6rem, 1.2vw, 0.75rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.6;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            z-index: 3;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                height: 100vh;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+            }
+
+            .content {
+                padding: 1rem;
+                margin-top: 0;
+                flex-shrink: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .countdown {
+                gap: 0.8rem;
+                flex-wrap: wrap;
+            }
+
+            .ring-background {
+                width: 80vw;
+                height: 80vw;
+                bottom: 0;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            .logo-image {
+                width: clamp(120px, 35vw, 180px);
+            }
+
+            .countdown-item {
+                min-width: clamp(60px, 20vw, 80px);
+            }
+
+            .tagline {
+                font-size: clamp(0.7rem, 3vw, 0.9rem);
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                height: 100vh;
+                padding: 0;
+            }
+
+            .content {
+                padding: 0.5rem;
+                height: 100vh;
+                justify-content: center;
+            }
+
+            .countdown {
+                gap: 0.5rem;
+            }
+
+            .countdown-item {
+                min-width: 65px;
+            }
+
+            .ring-background {
+                width: 90vw;
+                height: 90vw;
+                bottom: 0;
+            }
+
+            .logo-image {
+                width: clamp(100px, 40vw, 140px);
+            }
+
+            .tagline {
+                font-size: clamp(0.65rem, 3.5vw, 0.8rem);
+                margin-bottom: 1rem;
+            }
+
+            .footer {
+                padding: 0.5rem;
+                font-size: 0.7rem;
+                position: absolute;
+                bottom: 0;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .countdown-number {
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ring-background"></div>
+
+        <div class="content">
+            <div class="logo">
+                <img src="https://s3.twcstorage.ru/10049532-jeza-ring/title.png" alt="JEZA Ring" class="logo-image">
+            </div>
+
+            <div class="tagline">
+                NEW PREMIUM STYLE THAT STANDS OUT,<br>
+                WITHOUT COMPROMISES
+            </div>
+
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">DAYS</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">HOURS</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">MINUTES</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">SECONDS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        © 2025 Jeza Ring LLC. IFZA Building A2, Dubai, UAE
+    </footer>
+
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date('December 15, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Update countdown immediately and then every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Add smooth loading animation
+        window.addEventListener('load', function () {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>
